@@ -20,13 +20,14 @@ console.log(`В тексте ${wordsCounter} слов.`)
 
 //Вариант без массива
 let wordsCounter = 0
-for (i = 0; i <= str.length - 1; i++){
-    let notSeparator = (str[i] !== " " && str[i] !== "." && str[i] !== "," && str[i] !== "!" && str[i] !== "?")
-    let separatorNext = (str[i + 1] === " " || str[i + 1] === "." || str[i + 1] === "," || str[i + 1] === "!" || str[i + 1] === "?")
+function checkWord(i){
+    if (str[i] !== " " && str[i] !== "." && str[i] !== "," && str[i] !== "!" && str[i] !== "?")
+        if (str[i + 1] === " " || str[i + 1] === "." || str[i + 1] === "," || str[i + 1] === "!" || str[i + 1] === "?"){
+            wordsCounter++
+        } 
+}
 
-    if (notSeparator) { //Тут находим индекс, где слово начинается
-        if (separatorNext) // Не совсем понял, но, видимо, тут идет проверка, на разделитель. И если он найден, увеличиваем счетчик и идем дальше
-            wordsCounter++       
-    }
+for (i = 0; i <= str.length - 1; i++){
+    checkWord(i)
 }
 console.log(`В тексте ${wordsCounter} слов.`)
