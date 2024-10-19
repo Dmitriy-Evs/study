@@ -51,3 +51,7 @@ function findLongestWord(str) {
     } return longestWord
 }
 console.log("Последнее самое длинное слово - " + findLongestWord(text) + ". Оно содержит " + findLongestWord(text).length + " символов.")
+
+//В консоли получаем:
+//В твоем тексте 9 слов.
+//Последнее самое длинное слово - вот_самое_длинное2. Оно содержит 18 символов.
