@@ -43,7 +43,7 @@ for (let i = 1; i <= countPoints; ) {
 
 function printZero(row, column) {
   process.stdout.write("\x1Bc"); //Чистим консоль
-  // Массив создается каждую итерацию, чтобы сверяться с текущими значениями и отрисовывать
+  // Массив обновляется каждую итерацию, чтобы отрисовать все созданные точки
   let dotI = [];
   let dotJ = [];
   for (p = 0; p <= randomPointsArr.length - 1; p++) {
