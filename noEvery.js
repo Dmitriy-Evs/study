@@ -11,7 +11,7 @@ let pointX;
 
 //Считаем количество точек в зоне для заполнения
 let countPoints = row * column - (row * 2 + column * 2 - 4);
-let randomPointsArr = [[]]; // Создаем массив, который содержит вложенные массивы, в котором хранятся случайные точки
+let randomPointsArr = []; // Создаем массив, который содержит вложенные массивы, в котором хранятся случайные точки
 let createdOneDot = []; // Это массив, содержащий одну точку, который будет добавлен в основной.
 console.log("Количество точек " + countPoints);
 
@@ -21,33 +21,26 @@ function createArrayOfDot(row, column) {
     pointX = Math.floor(Math.random() * (column - 2)) + 2;
     createdOneDot = [pointY, pointX];
 }
-
-//Создаем первую точку
-//createArrayOfDot(row, column);
-//Создаем первую точку в массиве randomPointsArr
+//
+//randomPointsArr = createdOneDot
 
 
-randomPointsArr = createdOneDot
-
-//console.log("Весь массив перед циклом " + randomPointsArr)
-//console.log(createdOneDot)
-
-
-
-for (p = 1; p <= countPoints; ) {
+for (p = 0; p <= countPoints - 1;) {
     createArrayOfDot(row, column)
     //for (let j = 0; j <= createdOneDot.length - 1; j++) {
-    if (exist(randomPointsArr, createdOneDot)) {
+    if (isExist(randomPointsArr, createdOneDot)) {
         createArrayOfDot(row, column)
     } else {
         randomPointsArr.push(createdOneDot);
-        p++; 
+        p++;
     }
 }
 
-function exist(randomPointsArr, createdOneDot) {
-    for (let i = 1; i <= randomPointsArr.length - 1; i++) {
-        return randomPointsArr[i] === createdOneDot
+function isExist(randomPointsArr, createdOneDot) {
+    for (let i = 0; i <= randomPointsArr.length - 1; i++) {
+        bool = randomPointsArr[i] === createdOneDot
+        console.log(bool)
+        return bool
     }
 }
 
