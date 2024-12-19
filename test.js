@@ -1,13 +1,25 @@
-let arr1 = [1, 3, 5, 6]
-let arr2 = [2, 4, 3, 7]
-let dotI = 1
-let dotJ = 2
+let arr1 = [1, 3]
+let arr2 = [[2, 4], [1, 3], [3, 7]]
 
-let check = arr1.some()
 
-for (i = 0; i <= arr1.length; i++){
-    if (arr1[i] === dotI && arr2[i] === dotJ){
-        result =+ "0"
-    }
+function isExist(point, pointsArr) {
+    let isExistValue = false
+    for (let i = 0; i <= pointsArr.length - 1; i++) {
+        let point2 = pointsArr[i]
+        if (point[0] === point2[0] && point[1] === point2[1]){
+            isExistValue = true
+        }
+    } return isExistValue
 }
 
+function isExist2(point, pointsArr) {
+    for (let i = 0; i <= pointsArr.length - 1; i++) {
+        let point2 = pointsArr[i]
+        if (point[0] === point2[0] && point[1] === point2[1]){
+            return true
+        }
+    } return false
+}
+
+
+console.log("Результат выполнения функции: " + isExist2(arr1, arr2))
