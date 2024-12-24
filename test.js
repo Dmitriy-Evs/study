@@ -1,25 +1,24 @@
-let arr1 = [1, 3]
-let arr2 = [[2, 4], [1, 3], [3, 7]]
+let randomPointsArr = [1, 3, 5, 2, 4];
 
+//Выведем строчку из 10 символов. Сначала все все символы *, затем в случайном порядке заменяем их на 0 и выводим строчку
+outerColumn = 5;
 
-function isExist(point, pointsArr) {
-    let isExistValue = false
-    for (let i = 0; i <= pointsArr.length - 1; i++) {
-        let point2 = pointsArr[i]
-        if (point[0] === point2[0] && point[1] === point2[1]){
-            isExistValue = true
-        }
-    } return isExistValue
+function print(column, arr) {
+  let result = "";
+  let point = [];
+  for (let j = 0; j <= arr.length - 1; j++) {
+    point.push(arr[j]);
+    console.log(point);
+    for (let i = 0; i <= column - 1; i++) {
+      if (i === point[i + 1]) {
+        result += "0";
+      } else {
+        result += "*";
+      }
+    }
+    console.log(result);
+    result = "";
+  }
 }
 
-function isExist2(point, pointsArr) {
-    for (let i = 0; i <= pointsArr.length - 1; i++) {
-        let point2 = pointsArr[i]
-        if (point[0] === point2[0] && point[1] === point2[1]){
-            return true
-        }
-    } return false
-}
-
-
-console.log("Результат выполнения функции: " + isExist2(arr1, arr2))
+print(outerColumn, randomPointsArr);
