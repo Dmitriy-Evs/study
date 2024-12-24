@@ -40,7 +40,7 @@ function createArrayRandomPoins(countPoints) {
 }
 
 // Функция для последовательного заполнения всех внутренних координат фигуры
-function existBeforeP(p, point, pointsArr) {
+function isExistBeforeP(p, point, pointsArr) {
   for (let o = 0; o <= p; o++) {
     if (areEqual(point, pointsArr[o])) {
       return true
@@ -75,7 +75,7 @@ function blinkFullRect(row, column) {
           } else if (j === 1 || j === column) {
             result += "|";
           } else {
-            if (existBeforeP(p, currentPoint, randomPointsArr)) { // Тут используем логику из нескольких функций для отрисовки в нужной координате "0"
+            if (isExistBeforeP(p, currentPoint, randomPointsArr)) { // Тут используем логику из нескольких функций для отрисовки в нужной координате "0"
               result += "0"
             } else {
               result += " "
