@@ -56,6 +56,7 @@ function pause(duration) {
 }
 
 function blinkFullRect(row, column) {
+  process.stdout.write("\x1Bc") //Метод очистки консоли для VS Code
   //Создаем массив случайных координат
   let outerCountPoints = row * column - (row * 2 + column * 2 - 4)
   let randomPointsArr = createArrayRandomPoins(outerCountPoints)
@@ -86,7 +87,7 @@ function blinkFullRect(row, column) {
       console.log(result)
     }
     pause(300);
-    process.stdout.write("\x1Bc") //Метод очистки консоли для VS Code
+    process.stdout.write("\x1Bc")
   }
 }
 
